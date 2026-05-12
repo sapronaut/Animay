@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animay 🌸</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="kanji-bg">アニメ 漫画 愛 夢 桜 星 猫 東京</div>
+
+    <!-- AUTH OVERLAY -->
+    <div id="auth-overlay">
+        <div class="auth-card">
+            <div class="auth-logo">
+                ani<em>may</em> 🌸
+            </div>
+            <p class="auth-sub">your personal anime universe</p>
+
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="tab-signin" onclick="switchTab('signin')">Sign in</button>
+                <button class="auth-tab" id="tab-signup" onclick="switchTab('signup')">Sign up</button>
+            </div>
+
+            <div class="auth-form">
+                <div class="auth-field">
+                    <label for="auth-user">Username</label>
+                    <input type="text" id="auth-user" placeholder="your username" autocomplete="username">
+                </div>
+                <div class="auth-field">
+                    <label for="auth-pass">Password</label>
+                    <input type="password" id="auth-pass" placeholder="••••••••" autocomplete="current-password">
+                </div>
+                <p class="auth-error" id="auth-error"></p>
+                <button class="auth-btn" id="auth-submit" onclick="handleAuth()">Sign In ✦</button>
+            </div>
+
+            <div class="auth-guest">
+                <button id="guest-btn" onclick="guestMode()">continue as guest</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN PAGE -->
+    <div class="page">
+        <header>
+            <div class="logo" id="logo-home">
+                <span class="logo-dot"></span>
+                ani<span style="color:var(--rose)">may</span>
+            </div>
+
+            <nav class="hnav">
+                <button id="nav-home">home</button>
+                <button id="nav-top">top anime</button>
+                <button id="nav-movies">movies</button>
+            </nav>
+
+            <div id="header-right"></div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-left">
+                <div class="eyebrow">あなたのアニメ探し</div>
+                <h1>
+                    ani<span class="accent">may</span>
+                    <span class="sub-word">discover anime</span>
+                </h1>
+                <p class="hero-desc">
+                    Beautiful anime discovery experience.
+                </p>
+            </div>
+
+            <div class="hero-right">
+                <div class="search-widget">
+                    <div class="sbar">
+                        <input id="q" type="text" placeholder="Search anime...">
+                        <button class="sbtn" id="search-btn">search ✦</button>
+                    </div>
+
+                    <div class="filters">
+                        <span class="pill on" data-filter="all">all</span>
+                        <span class="pill" data-filter="action">⚔️ action</span>
+                        <span class="pill" data-filter="romance">💕 romance</span>
+                        <span class="pill" data-filter="isekai">🌀 isekai</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <main class="main" id="main"></main>
+
+        <footer>
+            <div class="footer-logo">
+                ani<em>may</em>
+            </div>
+            <div class="footer-copy">
+                powered by Jikan API
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts: auth first, then ui, then search, then app (which wires events) -->
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
